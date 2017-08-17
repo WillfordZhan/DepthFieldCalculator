@@ -2,4 +2,6 @@
     <string name="app_name">DepthFieldCalculator</string>
     <string name="focalLengthTextView_text">Focal length</string>
     <string name="apertureTextView_text">Aperture</string>
+    <string name="distanceTextView_text">Distance</string>
+    <string name="DoFLabelTextView_text">DoF:</string>
 </resources>

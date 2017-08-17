@@ -4,59 +4,232 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.github.willfordzhan.depthfieldcalculator.MainActivity">
+    tools:context="com.github.willfordzhan.depthfieldcalculator.MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
-    <TextView
-        android:id="@+id/FocalLengthView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+    <ImageView
+        android:id="@+id/modelImageView"
+        android:layout_width="180dp"
+        android:layout_height="106dp"
         android:layout_marginTop="16dp"
-        android:textSize="@dimen/textView_size"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/focalLengthTextView_text"
-        android:layout_marginStart="8dp" />
+        app:srcCompat="@drawable/LumixIcon"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1" />
 
-    <SeekBar
-        android:id="@+id/seekBar"
+    <Button
+        android:id="@+id/modelChangeButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toRightOf="@+id/FocalLengthView"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="8dp"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/modelImageView"
+        app:layout_constraintLeft_toLeftOf="@+id/modelImageView"
+        app:layout_constraintRight_toRightOf="@+id/modelImageView"
+        app:layout_constraintTop_toTopOf="@+id/modelImageView"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintTop_toTopOf="@+id/FocalLengthView"
-        android:layout_marginTop="0dp" />
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/editingConstraintLayout"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/modelImageView"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1">
+
+        <ImageView
+            android:id="@+id/focalLengthImageView"
+            android:layout_width="38dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/focalLengthIcon"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:id="@+id/focalLengthTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="TextView"
+            app:layout_constraintLeft_toRightOf="@+id/focalLengthImageView"
+            tools:text="@string/focalLengthTextView_text"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="@+id/focalLengthImageView"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/focalLengthImageView"
+            android:layout_marginBottom="8dp" />
+
+        <SeekBar
+            android:id="@+id/focalLengthSeekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/focalLengthTextView"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintTop_toTopOf="@+id/focalLengthTextView"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/focalLengthTextView"
+            android:layout_marginBottom="8dp"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <ImageView
+            android:id="@+id/apertureImageView"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            app:srcCompat="@drawable/apertureIcon"
+            android:layout_marginRight="7dp"
+            app:layout_constraintRight_toRightOf="@+id/focalLengthImageView"
+            android:layout_marginLeft="7dp"
+            app:layout_constraintLeft_toLeftOf="@+id/focalLengthImageView"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/focalLengthImageView"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <TextView
+            android:id="@+id/apertureTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/apertureImageView"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintLeft_toLeftOf="@+id/focalLengthTextView"
+            app:layout_constraintRight_toRightOf="@+id/focalLengthTextView"
+            app:layout_constraintTop_toTopOf="@+id/apertureImageView"
+            tools:text="@string/apertureTextView_text"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <Spinner
+            android:id="@+id/ApertureSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/focalLengthSeekbar"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/apertureImageView"
+            app:layout_constraintTop_toTopOf="@+id/apertureImageView"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <ImageView
+            android:id="@+id/distanceImageView"
+            android:layout_width="28dp"
+            android:layout_height="24dp"
+            app:srcCompat="@drawable/distanceIcon"
+            app:layout_constraintRight_toRightOf="@+id/apertureImageView"
+            app:layout_constraintLeft_toLeftOf="@+id/apertureImageView"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/apertureImageView" />
+
+        <TextView
+            android:id="@+id/distanceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/distanceImageView"
+            app:layout_constraintLeft_toLeftOf="@+id/focalLengthTextView"
+            app:layout_constraintRight_toRightOf="@+id/focalLengthTextView"
+            app:layout_constraintTop_toTopOf="@+id/distanceImageView"
+            tools:text="@string/distanceTextView_text"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <Spinner
+            android:id="@+id/distanceSipinner"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/distanceTextView"
+            app:layout_constraintLeft_toLeftOf="@+id/focalLengthSeekbar"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/distanceTextView"
+            android:layout_marginEnd="8dp"
+            android:layout_width="0dp" />
+
+    </android.support.constraint.ConstraintLayout>
 
     <TextView
-        android:id="@+id/Aperture"
+        android:id="@+id/DoFLabelTextView"
+        android:layout_width="54dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editingConstraintLayout"
+        tools:text="@string/DoFLabelTextView_text" />
+
+    <TextView
+        android:id="@+id/DoFTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
-        android:textSize="@dimen/textView_size"
-        app:layout_constraintLeft_toLeftOf="@+id/FocalLengthView"
-        app:layout_constraintRight_toRightOf="@+id/FocalLengthView"
-        app:layout_constraintTop_toBottomOf="@+id/FocalLengthView"
-        tools:text="@string/apertureTextView_text"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintHorizontal_bias="0.555" />
+        android:gravity="center"
+        android:textSize="@dimen/textView_size"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/DoFLabelTextView"
+        app:layout_constraintRight_toRightOf="@+id/DoFLabelTextView"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/DoFLabelTextView" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/seekBar"
-        app:layout_constraintTop_toTopOf="@+id/Aperture"
-        app:layout_constraintHorizontal_bias="0.0" />
 </android.support.constraint.ConstraintLayout>
