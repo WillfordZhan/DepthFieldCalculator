@@ -73,17 +73,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="@string/focalLengthTextView_text"
             app:layout_constraintBottom_toBottomOf="@+id/focalLengthImageView"
-            app:layout_constraintLeft_toRightOf="@+id/focalLengthImageView"
-            app:layout_constraintRight_toLeftOf="@+id/focalLengthSeekbar"
             app:layout_constraintTop_toTopOf="@+id/focalLengthImageView"
-            app:layout_constraintVertical_bias="0.666" />
+            app:layout_constraintVertical_bias="0.333"
+            app:layout_constraintRight_toRightOf="@+id/apertureTextView"
+            app:layout_constraintLeft_toRightOf="@+id/focalLengthImageView"
+            android:layout_marginLeft="8dp" />
 
         <SeekBar
             android:id="@+id/focalLengthSeekbar"
@@ -134,16 +134,18 @@
             tools:layout_constraintRight_creator="1"
             app:layout_constraintLeft_toRightOf="@+id/apertureImageView"
             android:layout_marginLeft="8dp"
-            app:layout_constraintVertical_bias="0.444"
+            app:layout_constraintVertical_bias="0.666"
             app:layout_constraintRight_toLeftOf="@+id/apertureSpinner"
-            android:layout_marginRight="8dp" />
+            android:layout_marginRight="8dp"
+            app:layout_constraintHorizontal_bias="0.0" />
 
         <Spinner
             android:id="@+id/apertureSpinner"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="190dp"
+            android:layout_height="25dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+            android:entries="@array/LumixApertureItems"
             app:layout_constraintBottom_toBottomOf="@+id/apertureImageView"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/apertureImageView"
@@ -151,7 +153,8 @@
             tools:layout_constraintBottom_creator="1"
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintRight_creator="1"
-            tools:layout_constraintTop_creator="1" />
+            tools:layout_constraintTop_creator="1"
+            tools:layout_editor_absoluteX="172dp" />
 
         <ImageView
             android:id="@+id/distanceImageView"
@@ -177,23 +180,24 @@
             app:layout_constraintTop_toTopOf="@+id/distanceImageView"
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintRight_creator="1"
-            app:layout_constraintVertical_bias="0.666"
+            app:layout_constraintVertical_bias="0.777"
             app:layout_constraintLeft_toRightOf="@+id/distanceImageView"
             android:layout_marginLeft="8dp"
             app:layout_constraintRight_toLeftOf="@+id/apertureSpinner"
-            android:layout_marginRight="8dp" />
+            android:layout_marginRight="8dp"
+            app:layout_constraintHorizontal_bias="0.0" />
 
         <EditText
             android:id="@+id/distanceEditText"
             android:layout_width="180dp"
-            android:layout_height="35dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="8dp"
             android:ems="10"
             android:inputType="number"
             android:textSize="14sp"
-            android:layout_marginRight="8dp"
-            app:layout_constraintRight_toRightOf="@+id/apertureSpinner"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="8dp" />
+            app:layout_constraintRight_toRightOf="@+id/apertureSpinner" />
 
     </android.support.constraint.ConstraintLayout>
 
