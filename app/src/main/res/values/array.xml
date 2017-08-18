@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="LumixApertureValues">
+        <item>f1.7</item>
+        <item>f2.0</item>
+        <item>f2.4</item>
+        <item>f2.8</item>
+        <item>f3.2</item>
+        <item>f3.5</item>
+        <item>f4.0</item>
+        <item>f4.8</item>
+        <item>f5.6</item>
+        <item>f6.4</item>
+        <item>f8</item>
+    </string-array>
+</resources>
